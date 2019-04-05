@@ -11,7 +11,12 @@ X = dataset.iloc[:, :-1]
 y = dataset.iloc[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=9)
 
-
-# Write your solution here :
-
+def xgboost(X_train,X_test,y_train,y_test,**kwargs):
+    kwargs1 = kwargs
+    kwargs1['n_estimators'] = 50
+    model = XGBClassifier(**kwargs1)
+    model.fit(X_train,y_train)
+    y_pred = model.predict(X_test)
+    acc = accuracy_score(y_test,y_pred)
+    return acc
 
