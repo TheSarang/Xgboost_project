@@ -19,7 +19,6 @@ param_grid1 = {"max_depth": [2, 3, 4, 5, 6, 7, 9, 11],
 
 
 xgb = XGBClassifier(seed=9)
-# Write your solution here :
 def myXGBoost(X_train,X_test,y_train,y_test,model,param_grid,Kfold=3,**kwargs):
     search = GridSearchCV(estimator=model,param_grid=param_grid,cv=Kfold)
     search.fit(X_train,y_train)
