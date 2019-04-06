@@ -5,7 +5,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score
 
 dataset = pd.read_csv('data/loan_clean_data.csv')
-# split data into X and y
 X = dataset.iloc[:, :-1]
 y = dataset.iloc[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=9)
